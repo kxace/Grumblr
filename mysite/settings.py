@@ -48,16 +48,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# LOGIN_URL = 'login'
+# LOGIN_REDIRECT_URL = 'home'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # for real use
-# EMAIL_HOST = 'SMTP-host'
-# EMAIL_HOST_USER = 'SMTP-username'
-# Email_HOST_PASSWORD = 'SMTP-password'
-# EMAIL_USE_TLS = True
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'seanwebapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'test'
+EMAIL_PORT = 587
 
 
 
