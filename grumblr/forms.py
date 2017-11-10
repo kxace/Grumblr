@@ -79,3 +79,6 @@ class Email(forms.Form):
 
 class CommentForm(forms.Form):
     text = forms.CharField(max_length=200)
+
+class PostForm(forms.Form):
+    text = forms.CharField(max_length = 42)

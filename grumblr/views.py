@@ -51,10 +51,15 @@ def post(request):
         print('post FAIL')
         errors.append('must enter something to post')
     else:
-        newPost = Post(text=request.POST['post'], user=request.user, time=datetime.datetime.now())
-        print('post SUCCESS!', newPost.text)
-        newPost.save()
-
+        form = PostForm(request)
+        form.text = request.POST['post']
+        if form.is_valid:
+            newPost = Post(text=request.POST['post'], user=request.user, time=datetime.datetime.now())
+            print('post SUCCESS!', newPost.text)
+            newPost.save()
+        else:
+            for error in newPost.errors
+                errors.append(error)
     posts = Post.objects.all().order_by('-time')
     context = {'posts':posts, 'errors':errors}
 
