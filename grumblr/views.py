@@ -58,8 +58,7 @@ def post(request):
             print('post SUCCESS!', newPost.text)
             newPost.save()
         else:
-            for error in newPost.errors
-                errors.append(error)
+            errors.append(newPost.errors)
     posts = Post.objects.all().order_by('-time')
     context = {'posts':posts, 'errors':errors}
 
