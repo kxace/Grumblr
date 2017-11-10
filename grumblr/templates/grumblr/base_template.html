@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grumblr</title>
+    <!--bootstrap css-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+</head>
+<body>
+
+<header class="top-header">
+    {% block navi %}
+    {% endblock %}
+</header>
+
+<div class="container">
+    <header>
+        <p>
+            <span>Grumblr</span>
+            <br>
+            Say whatever you want to say
+        </p>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+</div>
+<footer>
+    <p class="title"> A tiny blogging website, try it</p>
+    <p>Designed by Xiao Kuang</p>
+    <ul>
+        <li>
+            <p><i class="fa fa-map-o fa-2x"></i></p>
+            <p>Carnegie Mellon University, PA</p>
+        </li>
+        <li><p><i class="fa fa-envelope-o fa-2x"></i></p>
+            <p>kuangxiao.ace@gmail.com</p>
+        </li>
+        <li><p><i class="fa fa-mobile fa-2x"></i></p>
+            <p>+1 (412) 482-2197</p>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>

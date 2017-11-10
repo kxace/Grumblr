@@ -1,0 +1,38 @@
+{% extends 'grumblr/base_template.html' %}
+{% block navi %}
+    <div class="right top-nav">
+    </div>
+    <span class="welcome-msg">Welcome</span>
+    <a></a>
+    <i class="fa fa-user fa-2x"></i>
+{% endblock %}
+
+{% block content %}
+    <form class="login-form" action="{% url 'register' %}" method="post">
+        {% if form.errors %}
+        <p class="login-error"> Incorrect user name or password. </p>
+        {% endif %}
+        <table>
+            {% for field in form.visible_fields %}
+                <tr>
+                    <td>{{ field.label_tag }}</td>
+                    <td>{{ field }}</td>
+                    <td class="login-error">{{ field.errors }}</td>
+                    <br>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <div>
+            <div class="log-btn">
+                <div>
+                <button class="log-btn" type="submit">Register</button>
+                </div>
+            </div>
+            <div class="log-btn">
+                <a href="{% url 'login' %}"> <-Back</a>
+            </div>
+        </div>
+    {% csrf_token %}
+    </form>
+{% endblock %}

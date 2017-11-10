@@ -1,0 +1,65 @@
+{% extends 'Grumblr/base_template.html' %}
+{% block navi %}
+    <div class="right top-nav">
+        <a class="fa fa-home fa-2x"></a>
+        <a href="{% url 'home' %}">Global post</a>
+        <a href="{% url 'profile' user.username %}">My profile</a>
+    </div>
+    <span class="welcome-msg">Welcome, {{user.username}}</span>
+    <a href="{% url 'logout' %}">Logout</a>
+    <i class="fa fa-user fa-2x"></i>
+{% endblock %}
+{% block content %}
+    <section class="main-sec">
+        <div class="side-bar">
+            <a href="{% url 'home' %}">
+                <div class="nav-icon">
+                <i class="fa fa-vcard-o fa-2x"></i>
+                <div>global post</div>
+                </div>
+            </a>
+            <a href="{% url 'profile' user.username %}">
+                <div class="nav-icon">
+                <i class="fa fa-users fa-2x"></i>
+                <div>profile</div>
+            </div>
+            </a>
+            <a href="{% url 'followed' %}">
+                <div class="nav-icon active">
+                <i class="fa fa-link fa-2x"></i>
+                <div>followed</div>
+            </div>
+            </a>
+            <a href="{% url 'edit' %}">
+                <div class="nav-icon">
+                <i class="fa fa-pencil fa-2x"></i>
+                <div>edit profile</div>
+            </div>
+            </a>
+        </div>
+
+        <ul class="main-nav" id="profile-list">
+            {% for post in posts %}
+            <li class="posts">
+                <br>
+                <aside class="user">
+                    <a href="{% url 'profile' post.user.username %}">
+                        <img class='img' src="{% url 'photo' post.user.username %}" alt="{{ 'no photo' }}">
+                        <div class="name">{{ post.user.last_name }}</div>
+                    </a>
+                </aside>
+                <div class="content">
+                    <div class="text">
+                        {{post.text }}
+                    </div>
+                    <button class='comments' id='{{ post.id }}'>comments</button>
+                    <div class="time">
+                        {{ post.time }}
+                    </div>
+                </div>
+                <br>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

@@ -1,0 +1,17 @@
+<div class="main-nav comments-content" id="post-comment-{{ postid }}">
+    <br>
+    <aside>
+        <a class="user" href="{% url 'profile' user.username %}">
+            <img class="img" src="{% url 'photo' user.username %}" alt="{{ 'no photo' }}">
+            <div>me</div>
+        </a>
+    </aside>
+    <div class="content">
+        <div class="errors">
+            {{errors}}
+        </div>
+        <input id="{{ postid }}" type="text" title="commentInput">
+        <button class="post-btn post-comment" id="{{ postid }}">Send comment</button>
+    </div>
+    {% csrf_token %}
+</div>

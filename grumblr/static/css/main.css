@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    color: #FFFFFF;
+    background-color: lavender;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+button {
+    background-color: #abaf32;
+    /*color: white;*/
+}
+.errors {
+    color: red;
+}
+.top-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    box-shadow: grey;
+    z-index: 1;
+    background: #4267b2;
+    display: flex;
+    align-items: center;
+    padding:20px;
+}
+
+.top-nav {
+    margin-left: 20px;
+    display: block;
+    overflow: hidden;
+    flex: 1;
+    padding:0px;
+}
+.welcome-msg {
+    border-right:2px solid #eeeeee;
+    padding-right: 10px;
+}
+
+.top-header a {
+    color: white;
+    text-align: center;
+    padding:10px;
+    font-weight: 500;
+}
+.right {
+    float:right;
+}
+
+.container {
+    margin: 60px auto 20px;
+    max-width: 1200px;
+    min-width: 700px;
+    min-height: 400px;
+    background-color: gray;
+}
+.container > header {
+    align-items: center;
+    background: url(http://amppob.com/wp-content/uploads/2015/08/INTRO_bigstock-Laptop-with-coffee-cup-instan-29388125-1-810x540.jpg) no-repeat;
+    height: 240px;
+    display: flex;
+    padding-left: 200px;
+    background-size: 100%;
+
+}
+.container > header p {
+    border-left: solid #eeeeee;
+    padding-left: 20px;
+}
+.container > header span {
+    font-weight: 500;
+    font-size: 3em;
+    color: #eed862;
+}
+
+.login-form {
+    font-size: larger;
+    display: block;
+    padding: 30px;
+    margin: 0px auto;
+    width: 300px;
+}
+.login-form div {
+    margin-bottom: 10px;
+}
+.login-error {
+    color: red;
+}
+
+.log-btn {
+    width: 80px;
+    height: 20px;
+    background-color: palegoldenrod;
+    border: 1px solid darkgoldenrod;
+    font-weight: 400;
+    font-size: medium;
+    text-align: center;
+}
+.title {
+    font-size: 2em;
+}
+
+.main-sec {
+    width: 100%;
+
+    background: #F3BB43;
+}
+
+.side-bar {
+    width: 160px;
+    float: left;
+}
+.nav-icon {
+    color:      #624630;
+    padding:    20px;
+    text-align: center;
+    border-bottom: solid 1px seashell;
+}
+.nav-icon.active {
+    background: #F2EBD9;
+    color:      #624630;
+}
+.nav-icon:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color:      #624630;
+}
+.main-nav {
+    flex:1;
+    width: auto;
+    margin-left: 160px;
+    min-height: 400px;
+}
+.profile {
+    margin-left: 150px;
+}
+.posts {
+    background:  #F2EBD9;
+    color:       #624630;
+    min-height: 140px;
+    border-bottom: solid 2px gray;
+}
+.comments-content {
+    background:  #F2EBD9;
+    color:       #624630;
+    min-height: 140px;
+    margin-left: 10px;
+}
+.comments {
+    float:left;
+    margin-left:20px;
+    margin-top:0px;
+    margin-right:0px;
+    background: blanchedalmond;
+}
+.post-comment {
+    background: coral;
+}
+.edit-profile {
+    background:  #F2EBD9;
+    color:       #624630;
+    min-height: 200px;
+}
+
+.posts:hover {
+    background: #f2ece7;
+}
+.posts input {
+    width: 90%;
+    padding: 3px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.img {
+    width: 60px;
+    height: 60px;
+}
+.user {
+    float: left;
+    width: 80px;
+    text-align: center;
+    padding: 10px;
+    height: 100px;
+    border: 1px solid dimgray;
+    border-radius: 2px;
+    margin:10px;
+}
+
+.content {
+    margin-left: 100px;
+}
+.content .text {
+    height: 100px;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.content .time {
+    float: right;
+    padding: 3px;
+    padding-right: 40px;
+}
+.posts .post-btn {
+    margin-top: 10px;
+    border-radius: 4px;
+    float: right;
+    margin-right: 40px;
+    padding: 5px 20px;
+    text-align: center;
+}
+footer {
+    color: black;
+}
+footer p {
+    text-align: center;
+    padding:10px;
+}
+footer ul {
+    align-items: center;
+    display: flex;
+    padding: 20px;
+}
+footer ul li {
+    flex: 1;
+    text-align: center;
+    font-size: small;
+}
+

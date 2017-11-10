@@ -1,0 +1,16 @@
+{% extends 'grumblr/base_template.html' %}
+{% block navi %}
+    <div class="right top-nav">
+    </div>
+    <span class="welcome-msg">Welcome</span>
+    <a></a>
+    <i class="fa fa-user fa-2x"></i>
+{% endblock %}
+
+{% block content %}
+    <form class="login-form" action="{% url 'register' %}" method="post">
+        <br>
+        <h2>A email has been sent to email: {{ email }}</h2>
+    {% csrf_token %}
+    </form>
+{% endblock %}

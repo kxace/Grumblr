@@ -1,0 +1,1 @@
+<li class='posts'><br><a class='user' href='{% url 'profile' post.commenter.username %}'><img class='img' src='{% url 'photo' post.commenter.username %}' alt='{{ 'no photo' }}'><div class='name'>{{ post.commenter.last_name }}</div></a><div class='content'><div class='text'>{{ post.text }}</div><div class='time'>{{ post.time }}</div></div><br></li>

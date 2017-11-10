@@ -1,0 +1,1 @@
+{"id":"{{item.user}}", "text":"{{item.text}}", "time":"{{item.time|safe}}", "user":"{{item.user.username}}", "html":"{{item.html|safe}}"}

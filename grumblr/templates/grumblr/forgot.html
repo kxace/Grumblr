@@ -1,0 +1,27 @@
+{% extends 'grumblr/base_template.html' %}
+{% block navi %}
+    <div class="right top-nav">
+    </div>
+    <span class="welcome-msg">Welcome</span>
+    <a></a>
+    <i class="fa fa-user fa-2x"></i>
+{% endblock %}
+{% block content %}
+    <form class="login-form" method="post" action="{% url 'forgot' %}">
+        {% if error %}
+            <div class="errors"> {{ error }}</div>
+        {% endif %}
+
+        <div>{{ form }}</div>
+        <br>
+        <div>
+            <div>
+                <button class="log-btn" type="submit">SendMail</button>
+            </div>
+            <div class="log-btn">
+                <a href="{% url 'login' %}">back<-</a>
+            </div>
+        </div>
+        {% csrf_token %}
+    </form>
+{% endblock %}

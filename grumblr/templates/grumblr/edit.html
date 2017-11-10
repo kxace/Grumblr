@@ -1,0 +1,71 @@
+{% extends 'Grumblr/base_template.html' %}
+{% block navi %}
+    <div class="right top-nav">
+        <a class="fa fa-home fa-2x"></a>
+        <a href="{% url 'home' %}">Global post</a>
+        <a href="{% url 'profile' user.username %}">My profile</a>
+    </div>
+    <span class="welcome-msg">Welcome, {{user.username}}</span>
+    <a href="{% url 'logout' %}">Logout</a>
+    <i class="fa fa-user fa-2x"></i>
+{% endblock %}
+{% block content %}
+    <section class="main-sec">
+        <div class="side-bar">
+            <a href="{% url 'home' %}">
+                <div class="nav-icon">
+                <i class="fa fa-vcard-o fa-2x"></i>
+                <div>global post</div>
+                </div>
+            </a>
+            <a href="{% url 'profile' user.username %}">
+                <div class="nav-icon">
+                <i class="fa fa-users fa-2x"></i>
+                <div>profile</div>
+            </div>
+            </a>
+            <a href="{% url 'followed' %}">
+                <div class="nav-icon">
+                <i class="fa fa-link fa-2x"></i>
+                <div>followed</div>
+            </div>
+            </a>
+            <a href="{% url 'edit' %}">
+                <div class="nav-icon active">
+                <i class="fa fa-pencil fa-2x"></i>
+                <div>edit profile</div>
+            </div>
+            </a>
+        </div>
+
+        <ul class="main-nav">
+            <form enctype="multipart/form-data" method="post" class="edit-profile" action="{% url 'edit' %}">
+                <br>
+                <table class="posts">
+                <div class="profile">
+                    <div>Firstname: {{ form.first_name }}</div>
+                    <div>Lastname: {{ form.last_name }}</div>
+                    <div>Age: {{ form.age }}</div>
+                    <div>Bio: {{ form.bio }}</div>
+                    <div>Email: {{ form.email }}</div>
+                    <div>Picture: {{ form.picture }}</div>
+                    <button type="submit" name="edit">EditProfile</button>
+                    {% csrf_token %}
+                </div>
+                </table>
+            </form>
+            <form method="post" class="edit-profile" action="{% url 'edit' %}">
+                <br>
+                <table class="posts">
+                <div class="profile">
+                    <div>NewPassword1: {{ reset.password1 }}</div>
+                    <div>NewPassword2: {{ reset.password2 }}</div>
+                    <button type="submit" name="reset">ResetPassword</button>
+                    {% csrf_token %}
+                </div>
+                </table>
+            </form>
+
+        </ul>
+    </section>
+{% endblock %}
