@@ -57,10 +57,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'seanwebapp@gmail.com'
 EMAIL_HOST_PASSWORD = 'Kuang940102'
-EMAIL_PORT = 587
-
-
-
 
 
 ROOT_URLCONF = 'mysite.urls'
