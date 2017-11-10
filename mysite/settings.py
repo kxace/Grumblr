@@ -24,7 +24,7 @@ SECRET_KEY = '&7v%1utbpf8fmpy6dc=ybg60qobsj($c*$h=6mux()$9*27pn7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -57,7 +57,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'seanwebapp@gmail.com'
-EMAIL_HOST_PASSWORD = 'test'
+EMAIL_HOST_PASSWORD = '...'
 EMAIL_PORT = 587
 
 
