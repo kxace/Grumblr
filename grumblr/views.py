@@ -47,7 +47,7 @@ def login(request):
 @login_required
 def post(request):
     errors = []
-    if not 'post' in request.POST or not request.POST['post'] or request.POST['post'].length > 42:
+    if not 'post' in request.POST or not request.POST['post'] or len(request.POST['post'] > 42):
         print('post FAIL')
         errors.append('invalid input')
     else:
