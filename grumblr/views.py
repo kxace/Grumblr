@@ -47,9 +47,9 @@ def login(request):
 @login_required
 def post(request):
     errors = []
-    if not 'post' in request.POST or not request.POST['post']:
+    if not 'post' in request.POST or not request.POST['post'] or request.POST['post'].length > 42:
         print('post FAIL')
-        errors.append('must enter something to post')
+        errors.append('invalid input')
     else:
         form = PostForm(request)
         form.text = request.POST['post']
