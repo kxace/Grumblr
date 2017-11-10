@@ -40,7 +40,7 @@ class Grumbler(models.Model):
     age = models.IntegerField(default=20, blank=True)
     email = models.EmailField(max_length=50, default="")
     bio = models.CharField(max_length = 420, default="", blank=True)
-    picture = models.ImageField(upload_to="photos", blank=True)
+    picture = models.ImageField(upload_to="photos/", blank=True)
     def __unicode__(self):
         return self.first_name + " " + self.last_name
 

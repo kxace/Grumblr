@@ -24,7 +24,7 @@ SECRET_KEY = '&7v%1utbpf8fmpy6dc=ybg60qobsj($c*$h=6mux()$9*27pn7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -50,13 +50,14 @@ MIDDLEWARE = [
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # for real use
-# EMAIL_HOST = 'SMTP-host'
-# EMAIL_HOST_USER = 'SMTP-username'
-# Email_HOST_PASSWORD = 'SMTP-password'
-# EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'seanwebapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'Kuang940102'
+EMAIL_PORT = 587
 
 
 
@@ -128,7 +129,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = './grumblr/media'
+MEDIA_ROOT = '/home/ubuntu/grumblr/grumblr/media'
 
 MEDIA_URL = '/media/'
 
