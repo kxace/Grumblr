@@ -256,7 +256,8 @@ def comment_input(request, postid):
         text = request.POST['text']
     except ObjectDoesNotExist:
         return render(request, 'grumblr/comment_input.html', context)
-    newCommentForm = C
+    newCommentForm = CommentForm(request.POST)
+    newCommentForm.text = request.POST['text']
     if newCommentForm.is_valid():
         newComment = Comment(post=post, commenter=request.user, text=text)
         newComment.save()
